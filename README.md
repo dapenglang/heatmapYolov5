@@ -1,11 +1,11 @@
 # YOLO-V5 GRADCAM
 
-I constantly desired to know to which part of an object the object-detection models pay more attention. So I searched for it, but I didn't find any for Yolov5.
-Here is my implementation of Grad-cam for YOLO-v5. To load the model I used the yolov5's main codes, and for computing GradCam I used the codes from the gradcam_plus_plus-pytorch repository.
+我一直想知道对象检测模型更关注对象的哪个部分。所以我搜索了一下，但没有找到Yolov5。
+这是我为YOLO-v5实现的Grad cam。为了加载模型，我使用了yolov5的主代码，为了计算GradCam，我使用的是GradCam_plus_plus-pytorch存储库中的代码。
 
 
 ## Update:
-Repo works fine with yolov5-v6.1
+yolov5-v6.1
 
 
 ## Installation
@@ -14,14 +14,15 @@ Repo works fine with yolov5-v6.1
 ## Infer
 `python main.py --model-path yolov5s.pt --img-path images/cat-dog.jpg --output-dir outputs`
 
-**NOTE**: If you don't have any weights and just want to test, don't change the model-path argument. The yolov5s model will be automatically downloaded thanks to the download function from yolov5. 
+**NOTE**: 
+如果你没有任何权重，只是想测试，不要更改模型路径参数。由于yolov5的下载功能，yolov5s型号将自动下载。
 
-**NOTE**: For more input arguments, check out the main.py or run the following command:
+**NOTE**: 有关更多输入参数，请查看main.py或运行以下命令：
 
 ```python main.py -h```
 
 ### Custom Name
-To pass in your custom model you might want to pass in your custom names as well, which be done as below:
+要传入自定义模型，您可能还需要传入自定义名称，具体操作如下：
 ```
 python main.py --model-path cutom-model-path.pt --img-path img-path.jpg --output-dir outputs --names obj1,obj2,obj3 
 ```
@@ -32,10 +33,6 @@ python main.py --model-path cutom-model-path.pt --img-path img-path.jpg --output
 <img src="https://raw.githubusercontent.com/pooya-mohammadi/yolov5-gradcam/master/outputs/cat-dog-res.jpg" alt="cat&dog" height="300" width="1200">
 <img src="https://raw.githubusercontent.com/pooya-mohammadi/yolov5-gradcam/master/outputs/dog-res.jpg" alt="cat&dog" height="300" width="1200">
 
-## Note
-I checked the code, but I couldn't find an explanation for why the truck's heatmap does not show anything. Please inform me or create a pull request if you find the reason.
-
-This problem is solved in version 6.1
 
 ## TO Do
 1. Add GradCam++
